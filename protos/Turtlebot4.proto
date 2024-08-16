@@ -74,7 +74,6 @@ PROTO Turtlebot4 [
         device [
           LinearMotor {
             name "wheel_drop_left_joint"
-            #maxPosition 0.03
             maxForce 10000
           }
           PositionSensor {
@@ -150,7 +149,6 @@ PROTO Turtlebot4 [
         device [
           LinearMotor {
             name "wheel_drop_right_joint"
-            #maxPosition 0.03
             maxForce 10000
           }
           PositionSensor {
@@ -909,31 +907,31 @@ PROTO Turtlebot4 [
         ]
         name "front_left_bottom_weight_block"
         physics Physics {
-          density 100
-          #mass 0.061000
-          #centerOfMass [ 0.100000 0.000000 0.000000 ]
-          #inertiaMatrix [
-          #  9.348200e-06 4.363820e-06 1.288852e-05
-          #  -3.374340e-06 0.000000e+00 0.000000e+00
-          #]
+          density -1 
+          mass 0.061000
+          centerOfMass [ 0.100000 0.000000 0.000000 ] 
+          inertiaMatrix [
+            9.348200e-06 4.363820e-06 1.288852e-05
+            -3.374340e-06 0.000000e+00 0.000000e+00
+          ]
         }
       }
-     # Solid {
-     #   translation 0.060053 0.087588 0.106885
-     #   children [
-     #     USE weight_block_visual
-     #   ]
-     #   name "front_left_top_weight_block"
-     #   physics Physics {
-     #     density -1
-     #     mass 0.0 #61000
-     #     centerOfMass [ 0.100000 0.000000 0.000000 ]
-     #     inertiaMatrix [
-     #       9.348200e-06 4.363820e-06 1.288852e-05
-     #       -3.374340e-06 0.000000e+00 0.000000e+00
-     #     ]
-     #   }
-     # }
+      Solid {
+        translation 0.060053 0.087588 0.106885
+        children [
+          USE weight_block_visual
+        ]
+        name "front_left_top_weight_block"
+        physics Physics {
+          density -1
+          mass 0.61000
+          centerOfMass [ 0.100000 0.000000 0.000000 ]
+          inertiaMatrix [
+            9.348200e-06 4.363820e-06 1.288852e-05
+            -3.374340e-06 0.000000e+00 0.000000e+00
+          ]
+        }
+      }
      Solid {
         translation 0.060053 -0.087588 0.097885
         rotation 1.000000 0.000000 0.000000 3.141593
@@ -942,31 +940,30 @@ PROTO Turtlebot4 [
         ]
         name "front_right_bottom_weight_block"
         physics Physics {
-          density 1000
-          mass -1 #0.061000
-         # centerOfMass [ 0.100000 0.000000 0.000000 ]
-          #inertiaMatrix [
-          #  9.348200e-06 4.363820e-06 1.288852e-05
-          #  -3.374340e-06 0.000000e+00 0.000000e+00
-          #]
+          density -1
+          mass 0.061000
+          centerOfMass [ 0.100000 0.000000 0.000000 ]
+          inertiaMatrix [
+            9.348200e-06 4.363820e-06 1.288852e-05
+            -3.374340e-06 0.000000e+00 0.000000e+00
+          ]
         }
       }
       Solid {
         translation 0.060053 -0.087588 0.106885
         rotation 1.000000 0.000000 0.000000 3.141593
         children [
-          USE weight_block_visual
+         USE weight_block_visual
         ]
         name "front_right_top_weight_block"
         physics Physics {
-      #    density 1000
-          mass 1 
-     #     mass 0.0 #61000
-     #     centerOfMass [ 0.100000 0.000000 0.000000 ]
-     #     inertiaMatrix [
-     #       9.348200e-06 4.363820e-06 1.288852e-05
-     #       -3.374340e-06 0.000000e+00 0.000000e+00
-     #     ]
+          density -1
+          mass 0.61000
+          centerOfMass [ 0.100000 0.000000 0.000000 ]
+          inertiaMatrix [
+            9.348200e-06 4.363820e-06 1.288852e-05
+            -3.374340e-06 0.000000e+00 0.000000e+00
+          ]
         }
       }
     ]
