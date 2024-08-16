@@ -44,17 +44,17 @@ PROTO Turtlebot4 [
       Gyro {
         name "p3d gyro"
       }
-      Solid {
+      TouchSensor {
         translation 0.000000 0.000000 0.039200
+        name "bump_front_center"
+        boundingObject DEF bumper_collision Mesh {
+          url "meshes/bumper_collision.dae"
+        }
         children [
           DEF bumper_visual_visual CadShape {
             url "meshes/bumper_visual.dae"
           }
         ]
-        name "bump_front_center"
-        boundingObject DEF bumper_collision Mesh {
-          url "meshes/bumper_collision.dae"
-        }
         physics Physics {
           density -1
           mass 0.100000
