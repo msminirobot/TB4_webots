@@ -713,7 +713,7 @@ PROTO Turtlebot4 [
                 fieldOfView 6.283185
                 horizontalResolution 640
                 numberOfLayers 1
-                minRange 0.164000
+                minRange 0.150000
                 maxRange 12.000000
                 resolution 0.010000
               }
