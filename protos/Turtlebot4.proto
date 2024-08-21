@@ -703,7 +703,7 @@ PROTO Turtlebot4 [
           }
           Solid {
             translation -0.040000 0.000000 0.098715
-            rotation 0.000000 0.000000 1.000000 1.570796
+            rotation 0.000000 0.000000 -1.000000 1.570796
             children [
               DEF rplidar_visual CadShape {
                 url "meshes/rplidar.dae"
@@ -713,9 +713,9 @@ PROTO Turtlebot4 [
                 fieldOfView 6.283185
                 horizontalResolution 640
                 numberOfLayers 1
+                near 0.120000 
                 minRange 0.150000
                 maxRange 12.000000
-                resolution 0.010000
               }
             ]
             name "rplidar_link"
