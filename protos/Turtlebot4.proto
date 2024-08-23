@@ -671,11 +671,25 @@ PROTO Turtlebot4 [
         translation 0.000000 0.000000 0.094200
         children [
           Transform {
-            rotation 0.577350 0.577350 0.577350 2.094395
+            rotation 1 0 0 0 
+            translation 0.0 0.0 0.0265
             children [
-              DEF shell_visual CadShape {
-                url "meshes/shell.dae"
-              }
+             # DEF shell_visual CadShape {
+             #   url "meshes/shell.dae"
+             # }
+             Shape{
+              appearance Appearance {
+                 material Material {
+                   diffuseColor 0.13 0.13 0.13 
+                   emissiveColor 0.13 0.13 0.13 
+                 }
+               }
+               geometry Cylinder{
+                  height 0.055
+                  radius 0.14
+               }
+             }
+             
             ]
           }
           Solid {
@@ -847,13 +861,21 @@ PROTO Turtlebot4 [
             translation -0.118000 0.000000 0.052570
             children [
               DEF camera_bracket_visual CadShape {
-                url "meshes/camera_bracket.dae"
-              }
+               url "meshes/camera_bracket.dae"
+             }
               Solid {
-                translation 0.058400 0.000000 0.096760
-                children [
-                  DEF oakd_pro_visual CadShape {
-                    url "meshes/oakd_pro.dae"
+               translation 0.047400 0.000000 0.091760
+               children [
+                  Shape {
+                    appearance Appearance {
+                      material Material {
+                         diffuseColor 0.13 0.13 0.13 
+                         emissiveColor 0.13 0.13 0.13  
+                      }
+                    }
+                    geometry Box{
+                      size 0.022500 0.097000 0.030000
+                    }
                   }
                   Solid {
                     children [
@@ -960,7 +982,7 @@ PROTO Turtlebot4 [
                 ]
                 name "oakd_pro_link"
                 boundingObject Transform {
-                  translation -0.011000 0.000000 -0.005000
+                  translation 0 0 0 
                   children [
                     Box {
                        size 0.022500 0.097000 0.030000
@@ -991,8 +1013,16 @@ PROTO Turtlebot4 [
           }
         ]
         name "shell_link"
-        boundingObject DEF shell_collision Mesh {
-          url "meshes/shell_collision.dae"
+        boundingObject Transform {
+          translation 0.0 0.0 0.0265
+          rotation 0.000000 0.000000 1.000000 0
+          children [
+            Cylinder {
+              height 0.055
+              radius 0.14
+              subdivision 24
+            }
+          ]
         }
         physics Physics {
           density -1
