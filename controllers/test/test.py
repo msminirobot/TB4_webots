@@ -18,8 +18,12 @@ lidar = robot.getDevice('rplidar')
 lidar.enable(TIME_STEP)
 
 # bumper 
-bumper = robot.getDevice('bump_front_center') 
-bumper.enable(TIME_STEP)
+bumper_fc = robot.getDevice('bump_front_center') 
+bumper_fc.enable(TIME_STEP)
+
+bumper_fcr = robot.getDevice('bump_front_center_right') 
+bumper_fcr.enable(TIME_STEP)
+
 
 # camera 
 camera = robot.getDevice('rgb_camera')
@@ -38,7 +42,8 @@ while robot.step(TIME_STEP) != -1:
     #image is coded as a sequence of four bytes representing the blue, green, red and alpha levels of a pixel.
     img = camera.getImage() 
     
-    bp = bumper.getValue()
+    bp = [bumper_fc.getValue(), bumper_fcr.getValue()] 
+    print(bp)
     
     # read sensors outputs
     # process behavior

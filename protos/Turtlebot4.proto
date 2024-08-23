@@ -47,14 +47,120 @@ PROTO Turtlebot4 [
       TouchSensor {
         translation 0.000000 0.000000 0.039200
         name "bump_front_center"
-        boundingObject DEF bumper_collision Mesh {
-          url "meshes/bumper_collision.dae"
-        }
+        boundingObject DEF CREATE_BUMPER_BOUNDING_OBJECT Group {
+        children [
+          Pose {
+            translation 0.17 0 0.0165
+            rotation 0 0 1 0.0
+            children [
+              DEF CREATE_BUMPER_BOX Box {
+                size 0.01 0.1 0.065 
+              }
+            ]
+          }
+        ]
+      }
         children [
           DEF bumper_visual_visual CadShape {
             url "meshes/bumper_visual.dae"
           }
         ]
+        physics Physics {
+          density -1
+          mass 0.100000
+          centerOfMass [ 0.080000 0.000000 0.020000 ]
+          inertiaMatrix [
+            1.348375e-03 2.521737e-04 1.544253e-03
+            4.543520e-08 1.443485e-06 -6.721000e-10
+          ]
+        }
+      }
+      TouchSensor {
+        translation 0.000000 0.000000 0.039200
+        name "bump_front_center_left"
+        boundingObject DEF CREATE_BUMPER_BOUNDING_OBJECT Group {
+        children [
+          Pose {
+            translation 0.142 0.09 0.0165
+            rotation 0 0 1 0.6
+            children [
+              USE CREATE_BUMPER_BOX 
+            ]
+          }
+        ]
+      }
+        physics Physics {
+          density -1
+          mass 0.100000
+          centerOfMass [ 0.080000 0.000000 0.020000 ]
+          inertiaMatrix [
+            1.348375e-03 2.521737e-04 1.544253e-03
+            4.543520e-08 1.443485e-06 -6.721000e-10
+          ]
+        }
+      }
+      TouchSensor {
+        translation 0.000000 0.000000 0.039200
+        name "bump_front_center_right"
+        boundingObject DEF CREATE_BUMPER_BOUNDING_OBJECT Group {
+        children [
+          Pose {
+            translation 0.142 -0.09 0.0165
+            rotation 0 0 1 -0.6
+            children [
+              USE CREATE_BUMPER_BOX 
+            ]
+          }
+        ]
+      }
+        physics Physics {
+          density -1
+          mass 0.100000
+          centerOfMass [ 0.080000 0.000000 0.020000 ]
+          inertiaMatrix [
+            1.348375e-03 2.521737e-04 1.544253e-03
+            4.543520e-08 1.443485e-06 -6.721000e-10
+          ]
+        }
+      }
+      TouchSensor {
+        translation 0.000000 0.000000 0.039200
+        name "bump_front_right"
+        boundingObject DEF CREATE_BUMPER_BOUNDING_OBJECT Group {
+        children [
+          Pose {
+            translation 0.07 -0.148 0.0165
+            rotation 0 0 1 -1.2
+            children [
+              USE CREATE_BUMPER_BOX 
+            ]
+          }
+        ]
+      }
+        physics Physics {
+          density -1
+          mass 0.100000
+          centerOfMass [ 0.080000 0.000000 0.020000 ]
+          inertiaMatrix [
+            1.348375e-03 2.521737e-04 1.544253e-03
+            4.543520e-08 1.443485e-06 -6.721000e-10
+          ]
+        }
+      }
+      TouchSensor {
+        translation 0.000000 0.000000 0.039200
+        name "bump_front_left"
+        boundingObject DEF CREATE_BUMPER_BOUNDING_OBJECT Group {
+        children [
+          Pose {
+            translation 0.07 0.148 0.0165
+            rotation 0 0 1 1.2
+            children [
+              USE CREATE_BUMPER_BOX 
+            ]
+          }
+        ]
+      }
         physics Physics {
           density -1
           mass 0.100000
@@ -736,7 +842,7 @@ PROTO Turtlebot4 [
                 0.000000e+00 0.000000e+00 0.000000e+00
               ]
             }
-          }
+          }   
           Solid {
             translation -0.118000 0.000000 0.052570
             children [
