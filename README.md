@@ -15,4 +15,4 @@ The robot includes the following sensors at the moment:
 	- resolution: 0.01 
 	- 640 measurements  
 * Bumper (bump_front_center)
-	- 1 zone for whole bumper 
+	- 5 zones 
